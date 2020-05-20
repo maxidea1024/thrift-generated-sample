@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<link href="style.css" rel="stylesheet" type="text/css"/>
+<title>Thrift module: sample</title></head><body>
+<div class="container-fluid">
+<h1>Thrift module: sample</h1>
+<table class="table-bordered table-striped table-condensed"><thead><tr><th>Module</th><th>Services</th><th>Data types</th><th>Constants</th></tr></thead><tbody>
+<tr>
+<td>sample</td><td><a href="#Svc_Auth">Auth</a><br/>
+<ul>
+<li><a href="#Fn_Auth_Login">Login</a></li>
+</ul>
+</td>
+<td><a href="#Struct_LoginRequest">LoginRequest</a><br/>
+<a href="#Struct_LoginResponse">LoginResponse</a><br/>
+<a href="#Enum_ServicePlatformType">ServicePlatformType</a><br/>
+</td>
+<td><code><a href="#Const_DEFAULT_API_SERVER_URL">DEFAULT_API_SERVER_URL</a></code><br/>
+<code><a href="#Const_MAX_PASSWORD_LEN">MAX_PASSWORD_LEN</a></code><br/>
+</td>
+</tr></tbody></table>
+<hr/><h2 id="Constants">Constants</h2>
+<table class="table-bordered table-striped table-condensed"><thead><tr><th>Constant</th><th>Type</th><th>Value</th></tr></thead><tbody>
+<tr id="Const_MAX_PASSWORD_LEN"><td><code>MAX_PASSWORD_LEN</code></td><td><code>i32</code></td><td><code>13</code></td></tr><tr id="Const_DEFAULT_API_SERVER_URL"><td><code>DEFAULT_API_SERVER_URL</code></td><td><code>string</code></td><td><code>"https://server.url.com/api/v1/
+abc"</code></td></tr></tbody></table><hr/><h2 id="Enumerations">Enumerations</h2>
+<div class="definition"><h3 id="Enum_ServicePlatformType">Enumeration: ServicePlatformType</h3>
+<br/><table class="table-bordered table-striped table-condensed">
+<tr><td><code>Google</code></td><td><code>0</code></td><td>
+<pre>구글
+</pre><br/></td></tr>
+<tr><td><code>Apple</code></td><td><code>1</code></td><td>
+<pre>애플
+</pre><br/></td></tr>
+<tr><td><code>Facebook</code></td><td><code>2</code></td><td>
+<pre>페이스북
+</pre><br/></td></tr>
+<tr><td><code>Twitter</code></td><td><code>3</code></td><td>
+<pre>Twitter
+</pre><br/></td></tr>
+<tr><td><code>OneStore</code></td><td><code>4</code></td><td>
+<pre>원스토어
+</pre><br/></td></tr>
+</table></div>
+<hr/><h2 id="Structs">Data structures</h2>
+<div class="definition"><h3 id="Struct_LoginRequest">Struct: LoginRequest</h3>
+<table class="table-bordered table-striped table-condensed"><thead><tr><th>Key</th><th>Field</th><th>Type</th><th>Description</th><th>Requiredness</th><th>Default value</th></tr></thead><tbody>
+<tr><td>1</td><td>id</td><td><code>string</code></td><td>사용자 계정 ID
+</td><td>optional</td><td><code>"guest"</code></td></tr>
+<tr><td>2</td><td>password</td><td><code>string</code></td><td>사용자 계정 비밀번호
+</td><td>optional</td><td><code>""</code></td></tr>
+</tbody></table><br/></div><div class="definition"><h3 id="Struct_LoginResponse">Struct: LoginResponse</h3>
+<table class="table-bordered table-striped table-condensed"><thead><tr><th>Key</th><th>Field</th><th>Type</th><th>Description</th><th>Requiredness</th><th>Default value</th></tr></thead><tbody>
+<tr><td>1</td><td>session_key</td><td><code>string</code></td><td>세션키
+</td><td>optional</td><td><code>"1234"</code></td></tr>
+<tr><td>2</td><td>newbee</td><td><code>bool</code></td><td>신규 가입자인지 여부
+</td><td>optional</td><td><code>false</code></td></tr>
+</tbody></table><br/></div><hr/><h2 id="Services">Services</h2>
+<h3 id="Svc_Auth">Service: Auth</h3>
+<div class="definition"><h4 id="Fn_Auth_Login">Function: Auth.Login</h4>
+<pre><code><a href="#Struct_LoginResponse">LoginResponse</a></code> Login(<code><a href="#Struct_LoginRequest">LoginRequest</a></code> request)
+</pre><pre>API 서버에게 로그인을 요청합니다.
+</pre><br/></div></div></body></html>

@@ -1,0 +1,119 @@
+{
+  "name": "sample",
+  "namespaces": {
+    "*": "MyService"
+  },
+  "includes": [],
+  "enums": [
+    {
+      "name": "ServicePlatformType",
+      "members": [
+        {
+          "name": "Google",
+          "value": 0,
+          "doc": "구글\n"
+        },
+        {
+          "name": "Apple",
+          "value": 1,
+          "doc": "애플\n"
+        },
+        {
+          "name": "Facebook",
+          "value": 2,
+          "doc": "페이스북\n"
+        },
+        {
+          "name": "Twitter",
+          "value": 3,
+          "doc": "Twitter\n"
+        },
+        {
+          "name": "OneStore",
+          "value": 4,
+          "doc": "원스토어\n"
+        }
+      ]
+    }
+  ],
+  "typedefs": [],
+  "structs": [
+    {
+      "name": "LoginRequest",
+      "isException": false,
+      "isUnion": false,
+      "fields": [
+        {
+          "key": 1,
+          "name": "id",
+          "typeId": "string",
+          "doc": "사용자 계정 ID\n",
+          "required": "optional",
+          "default": "guest"
+        },
+        {
+          "key": 2,
+          "name": "password",
+          "typeId": "string",
+          "doc": "사용자 계정 비밀번호\n",
+          "required": "optional",
+          "default": ""
+        }
+      ]
+    },
+    {
+      "name": "LoginResponse",
+      "isException": false,
+      "isUnion": false,
+      "fields": [
+        {
+          "key": 1,
+          "name": "session_key",
+          "typeId": "string",
+          "doc": "세션키\n",
+          "required": "optional",
+          "default": "1234"
+        },
+        {
+          "key": 2,
+          "name": "newbee",
+          "typeId": "bool",
+          "doc": "신규 가입자인지 여부\n",
+          "required": "optional",
+          "default": 0
+        }
+      ]
+    }
+  ],
+  "constants": [],
+  "services": [
+    {
+      "name": "Auth",
+      "functions": [
+        {
+          "name": "Login",
+          "returnTypeId": "struct",
+          "returnType": {
+            "typeId": "struct",
+            "class": "LoginResponse"
+          },
+          "oneway": false,
+          "doc": "API 서버에게 로그인을 요청합니다.\n",
+          "arguments": [
+            {
+              "key": 1,
+              "name": "request",
+              "typeId": "struct",
+              "type": {
+                "typeId": "struct",
+                "class": "LoginRequest"
+              },
+              "required": "req_out"
+            }
+          ],
+          "exceptions": []
+        }
+      ]
+    }
+  ]
+}
